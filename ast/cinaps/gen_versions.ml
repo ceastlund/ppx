@@ -78,7 +78,7 @@ module Signature = struct
             (inst_node "concrete" ~tvars)
             (inst_node "t" ~tvars)));
     Ml.declare_val
-      "to_concrete"
+      "to_concrete_opt"
       (Line
          (Printf.sprintf "%s -> %s option"
             (inst_node "t" ~tvars)
@@ -245,10 +245,10 @@ module Structure = struct
       loop alist;
       Print.println "%s" (String.make (List.length alist) ')')
 
-  let define_to_concrete decl ~node_name ~grammar =
+  let define_to_concrete_opt decl ~node_name ~grammar =
     match (decl : Astlib.Grammar.decl) with
     | Wrapper ty ->
-      Print.println "let to_concrete t =";
+      Print.println "let to_concrete_opt t =";
       Print.indented (fun () ->
         Print.println
           "match Node.to_node (Unversioned.Private.transparent t) ~version with";
@@ -257,7 +257,7 @@ module Structure = struct
           (ast_to_ty ~grammar ty);
         Print.println "| _ -> None")
     | Record record ->
-      Print.println "let to_concrete t =";
+      Print.println "let to_concrete_opt t =";
       Print.indented (fun () ->
         Print.println
           "match Node.to_node (Unversioned.Private.transparent t) ~version with";
@@ -274,7 +274,7 @@ module Structure = struct
                    (List.map record ~f:(fun (field, _) -> Ml.id field))))));
         Print.println "| _ -> None")
     | Variant variant ->
-      Print.println "let to_concrete t =";
+      Print.println "let to_concrete_opt t =";
       Print.indented (fun () ->
         Print.println
           "match Node.to_node (Unversioned.Private.transparent t) ~version with";
@@ -327,7 +327,7 @@ module Structure = struct
       Print.newline ();
       define_of_concrete decl;
       Print.newline ();
-      define_to_concrete decl ~node_name ~grammar
+      define_to_concrete_opt decl ~node_name ~grammar
 end
 
 module Unversioned = struct
