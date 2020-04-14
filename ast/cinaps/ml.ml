@@ -122,6 +122,9 @@ let print_arrow list ~f return =
 let print_labelled_arrow alist ~f return =
   print_arrow alist ~f:(fun (label, x) -> id label ^ ":" ^ f x) return
 
+let print_optional_arrow alist ~f return =
+  print_arrow alist ~f:(fun (label, x) -> "?" ^ id label ^ ":" ^ f x) return
+
 let class_params = function
   | [] -> ""
   | params ->

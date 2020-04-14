@@ -66,6 +66,19 @@ module Signature = struct
                Ml.print_labelled_arrow record ~f:string_of_ty
                  (inst_node "t" ~tvars))))
 
+  let declare_update decl ~tvars =
+    let env = Poly_env.uninstantiated tvars in
+    let string_of_ty ty = Render.string_of_ty ~nodify:true (Poly_env.subst_ty ty ~env) in
+    match (decl : Astlib.Grammar.decl) with
+    | Wrapper _ -> ()
+    | Record record ->
+      Ml.declare_val
+        "update"
+        (Block (fun () ->
+           let ty = inst_node "t" ~tvars in
+           Ml.print_optional_arrow record ~f:string_of_ty (sprintf "%s -> %s" ty ty)))
+    | Variant _ -> ()
+
   let print decl ~name ~tvars =
     Ml.declare_type "t" ~tvars (Line (Ml.poly_type name ~tvars));
     Print.newline ();
@@ -84,7 +97,8 @@ module Signature = struct
             (inst_node "t" ~tvars)
             (inst_node "concrete" ~tvars)));
     Print.newline ();
-    declare_constructors decl ~tvars
+    declare_constructors decl ~tvars;
+    declare_update decl ~tvars
 end
 
 module Structure = struct
