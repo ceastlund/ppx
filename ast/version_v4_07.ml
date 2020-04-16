@@ -71,6 +71,11 @@ module Longident = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "longident"; node })
 end
 
 module Longident_loc = struct
@@ -88,6 +93,11 @@ module Longident_loc = struct
     match Node.to_node (Unversioned.Private.transparent t) ~version with
     | { name = "longident_loc"; data } -> (Data.to_loc ~f:Data.to_node) data
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "longident_loc"; node })
 end
 
 module Rec_flag = struct
@@ -117,6 +127,11 @@ module Rec_flag = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "rec_flag"; node })
 end
 
 module Direction_flag = struct
@@ -146,6 +161,11 @@ module Direction_flag = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "direction_flag"; node })
 end
 
 module Private_flag = struct
@@ -175,6 +195,11 @@ module Private_flag = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "private_flag"; node })
 end
 
 module Mutable_flag = struct
@@ -204,6 +229,11 @@ module Mutable_flag = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "mutable_flag"; node })
 end
 
 module Virtual_flag = struct
@@ -233,6 +263,11 @@ module Virtual_flag = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "virtual_flag"; node })
 end
 
 module Override_flag = struct
@@ -262,6 +297,11 @@ module Override_flag = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "override_flag"; node })
 end
 
 module Closed_flag = struct
@@ -291,6 +331,11 @@ module Closed_flag = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "closed_flag"; node })
 end
 
 module Arg_label = struct
@@ -345,6 +390,11 @@ module Arg_label = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "arg_label"; node })
 end
 
 module Variance = struct
@@ -379,6 +429,11 @@ module Variance = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "variance"; node })
 end
 
 module Constant = struct
@@ -464,6 +519,11 @@ module Constant = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "constant"; node })
 end
 
 module Attribute = struct
@@ -481,6 +541,11 @@ module Attribute = struct
     match Node.to_node (Unversioned.Private.transparent t) ~version with
     | { name = "attribute"; data } -> (Data.to_tuple2 ~f1:(Data.to_loc ~f:Data.to_string) ~f2:Data.to_node) data
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "attribute"; node })
 end
 
 module Extension = struct
@@ -498,6 +563,11 @@ module Extension = struct
     match Node.to_node (Unversioned.Private.transparent t) ~version with
     | { name = "extension"; data } -> (Data.to_tuple2 ~f1:(Data.to_loc ~f:Data.to_string) ~f2:Data.to_node) data
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "extension"; node })
 end
 
 module Attributes = struct
@@ -515,6 +585,11 @@ module Attributes = struct
     match Node.to_node (Unversioned.Private.transparent t) ~version with
     | { name = "attributes"; data } -> (Data.to_list ~f:Data.to_node) data
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "attributes"; node })
 end
 
 module Payload = struct
@@ -596,6 +671,11 @@ module Payload = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "payload"; node })
 end
 
 module Core_type = struct
@@ -630,6 +710,11 @@ module Core_type = struct
               Some { ptyp_desc; ptyp_loc; ptyp_attributes }
         )))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "core_type"; node })
 end
 
 module Core_type_desc = struct
@@ -837,6 +922,11 @@ module Core_type_desc = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "core_type_desc"; node })
 end
 
 module Package_type = struct
@@ -854,6 +944,11 @@ module Package_type = struct
     match Node.to_node (Unversioned.Private.transparent t) ~version with
     | { name = "package_type"; data } -> (Data.to_tuple2 ~f1:Data.to_node ~f2:(Data.to_list ~f:(Data.to_tuple2 ~f1:Data.to_node ~f2:Data.to_node))) data
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "package_type"; node })
 end
 
 module Row_field = struct
@@ -909,6 +1004,11 @@ module Row_field = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "row_field"; node })
 end
 
 module Object_field = struct
@@ -962,6 +1062,11 @@ module Object_field = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "object_field"; node })
 end
 
 module Pattern = struct
@@ -996,6 +1101,11 @@ module Pattern = struct
               Some { ppat_desc; ppat_loc; ppat_attributes }
         )))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "pattern"; node })
 end
 
 module Pattern_desc = struct
@@ -1291,6 +1401,11 @@ module Pattern_desc = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "pattern_desc"; node })
 end
 
 module Expression = struct
@@ -1325,6 +1440,11 @@ module Expression = struct
               Some { pexp_desc; pexp_loc; pexp_attributes }
         )))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "expression"; node })
 end
 
 module Expression_desc = struct
@@ -1942,6 +2062,11 @@ module Expression_desc = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "expression_desc"; node })
 end
 
 module Case = struct
@@ -1976,6 +2101,11 @@ module Case = struct
               Some { pc_lhs; pc_guard; pc_rhs }
         )))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "case"; node })
 end
 
 module Value_description = struct
@@ -2016,6 +2146,11 @@ module Value_description = struct
                   Some { pval_name; pval_type; pval_prim; pval_attributes; pval_loc }
         )))))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "value_description"; node })
 end
 
 module Type_declaration = struct
@@ -2065,6 +2200,11 @@ module Type_declaration = struct
                         Some { ptype_name; ptype_params; ptype_cstrs; ptype_kind; ptype_private; ptype_manifest; ptype_attributes; ptype_loc }
         ))))))))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "type_declaration"; node })
 end
 
 module Type_kind = struct
@@ -2124,6 +2264,11 @@ module Type_kind = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "type_kind"; node })
 end
 
 module Label_declaration = struct
@@ -2164,6 +2309,11 @@ module Label_declaration = struct
                   Some { pld_name; pld_mutable; pld_type; pld_loc; pld_attributes }
         )))))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "label_declaration"; node })
 end
 
 module Constructor_declaration = struct
@@ -2204,6 +2354,11 @@ module Constructor_declaration = struct
                   Some { pcd_name; pcd_args; pcd_res; pcd_loc; pcd_attributes }
         )))))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "constructor_declaration"; node })
 end
 
 module Constructor_arguments = struct
@@ -2253,6 +2408,11 @@ module Constructor_arguments = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "constructor_arguments"; node })
 end
 
 module Type_extension = struct
@@ -2293,6 +2453,11 @@ module Type_extension = struct
                   Some { ptyext_path; ptyext_params; ptyext_constructors; ptyext_private; ptyext_attributes }
         )))))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "type_extension"; node })
 end
 
 module Extension_constructor = struct
@@ -2330,6 +2495,11 @@ module Extension_constructor = struct
                 Some { pext_name; pext_kind; pext_loc; pext_attributes }
         ))))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "extension_constructor"; node })
 end
 
 module Extension_constructor_kind = struct
@@ -2381,6 +2551,11 @@ module Extension_constructor_kind = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "extension_constructor_kind"; node })
 end
 
 module Class_type = struct
@@ -2415,6 +2590,11 @@ module Class_type = struct
               Some { pcty_desc; pcty_loc; pcty_attributes }
         )))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_type"; node })
 end
 
 module Class_type_desc = struct
@@ -2519,6 +2699,11 @@ module Class_type_desc = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_type_desc"; node })
 end
 
 module Class_signature = struct
@@ -2550,6 +2735,11 @@ module Class_signature = struct
             Some { pcsig_self; pcsig_fields }
         ))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_signature"; node })
 end
 
 module Class_type_field = struct
@@ -2584,6 +2774,11 @@ module Class_type_field = struct
               Some { pctf_desc; pctf_loc; pctf_attributes }
         )))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_type_field"; node })
 end
 
 module Class_type_field_desc = struct
@@ -2693,6 +2888,11 @@ module Class_type_field_desc = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_type_field_desc"; node })
 end
 
 module Class_infos = struct
@@ -2736,6 +2936,11 @@ module Class_infos = struct
                     Some { pci_virt; pci_params; pci_name; pci_expr; pci_loc; pci_attributes }
         ))))))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_infos"; node })
 end
 
 module Class_description = struct
@@ -2753,6 +2958,11 @@ module Class_description = struct
     match Node.to_node (Unversioned.Private.transparent t) ~version with
     | { name = "class_description"; data } -> Data.to_node data
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_description"; node })
 end
 
 module Class_type_declaration = struct
@@ -2770,6 +2980,11 @@ module Class_type_declaration = struct
     match Node.to_node (Unversioned.Private.transparent t) ~version with
     | { name = "class_type_declaration"; data } -> Data.to_node data
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_type_declaration"; node })
 end
 
 module Class_expr = struct
@@ -2804,6 +3019,11 @@ module Class_expr = struct
               Some { pcl_desc; pcl_loc; pcl_attributes }
         )))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_expr"; node })
 end
 
 module Class_expr_desc = struct
@@ -2963,6 +3183,11 @@ module Class_expr_desc = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_expr_desc"; node })
 end
 
 module Class_structure = struct
@@ -2994,6 +3219,11 @@ module Class_structure = struct
             Some { pcstr_self; pcstr_fields }
         ))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_structure"; node })
 end
 
 module Class_field = struct
@@ -3028,6 +3258,11 @@ module Class_field = struct
               Some { pcf_desc; pcf_loc; pcf_attributes }
         )))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_field"; node })
 end
 
 module Class_field_desc = struct
@@ -3156,6 +3391,11 @@ module Class_field_desc = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_field_desc"; node })
 end
 
 module Class_field_kind = struct
@@ -3207,6 +3447,11 @@ module Class_field_kind = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_field_kind"; node })
 end
 
 module Class_declaration = struct
@@ -3224,6 +3469,11 @@ module Class_declaration = struct
     match Node.to_node (Unversioned.Private.transparent t) ~version with
     | { name = "class_declaration"; data } -> Data.to_node data
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "class_declaration"; node })
 end
 
 module Module_type = struct
@@ -3258,6 +3508,11 @@ module Module_type = struct
               Some { pmty_desc; pmty_loc; pmty_attributes }
         )))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "module_type"; node })
 end
 
 module Module_type_desc = struct
@@ -3388,6 +3643,11 @@ module Module_type_desc = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "module_type_desc"; node })
 end
 
 module Signature = struct
@@ -3405,6 +3665,11 @@ module Signature = struct
     match Node.to_node (Unversioned.Private.transparent t) ~version with
     | { name = "signature"; data } -> (Data.to_list ~f:Data.to_node) data
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "signature"; node })
 end
 
 module Signature_item = struct
@@ -3436,6 +3701,11 @@ module Signature_item = struct
             Some { psig_desc; psig_loc }
         ))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "signature_item"; node })
 end
 
 module Signature_item_desc = struct
@@ -3654,6 +3924,11 @@ module Signature_item_desc = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "signature_item_desc"; node })
 end
 
 module Module_declaration = struct
@@ -3691,6 +3966,11 @@ module Module_declaration = struct
                 Some { pmd_name; pmd_type; pmd_attributes; pmd_loc }
         ))))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "module_declaration"; node })
 end
 
 module Module_type_declaration = struct
@@ -3728,6 +4008,11 @@ module Module_type_declaration = struct
                 Some { pmtd_name; pmtd_type; pmtd_attributes; pmtd_loc }
         ))))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "module_type_declaration"; node })
 end
 
 module Open_description = struct
@@ -3765,6 +4050,11 @@ module Open_description = struct
                 Some { popen_lid; popen_override; popen_loc; popen_attributes }
         ))))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "open_description"; node })
 end
 
 module Include_infos = struct
@@ -3799,6 +4089,11 @@ module Include_infos = struct
               Some { pincl_mod; pincl_loc; pincl_attributes }
         )))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "include_infos"; node })
 end
 
 module Include_description = struct
@@ -3816,6 +4111,11 @@ module Include_description = struct
     match Node.to_node (Unversioned.Private.transparent t) ~version with
     | { name = "include_description"; data } -> Data.to_node data
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "include_description"; node })
 end
 
 module Include_declaration = struct
@@ -3833,6 +4133,11 @@ module Include_declaration = struct
     match Node.to_node (Unversioned.Private.transparent t) ~version with
     | { name = "include_declaration"; data } -> Data.to_node data
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "include_declaration"; node })
 end
 
 module With_constraint = struct
@@ -3920,6 +4225,11 @@ module With_constraint = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "with_constraint"; node })
 end
 
 module Module_expr = struct
@@ -3954,6 +4264,11 @@ module Module_expr = struct
               Some { pmod_desc; pmod_loc; pmod_attributes }
         )))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "module_expr"; node })
 end
 
 module Module_expr_desc = struct
@@ -4086,6 +4401,11 @@ module Module_expr_desc = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "module_expr_desc"; node })
 end
 
 module Structure = struct
@@ -4103,6 +4423,11 @@ module Structure = struct
     match Node.to_node (Unversioned.Private.transparent t) ~version with
     | { name = "structure"; data } -> (Data.to_list ~f:Data.to_node) data
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "structure"; node })
 end
 
 module Structure_item = struct
@@ -4134,6 +4459,11 @@ module Structure_item = struct
             Some { pstr_desc; pstr_loc }
         ))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "structure_item"; node })
 end
 
 module Structure_item_desc = struct
@@ -4386,6 +4716,11 @@ module Structure_item_desc = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "structure_item_desc"; node })
 end
 
 module Value_binding = struct
@@ -4423,6 +4758,11 @@ module Value_binding = struct
                 Some { pvb_pat; pvb_expr; pvb_attributes; pvb_loc }
         ))))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "value_binding"; node })
 end
 
 module Module_binding = struct
@@ -4460,6 +4800,11 @@ module Module_binding = struct
                 Some { pmb_name; pmb_expr; pmb_attributes; pmb_loc }
         ))))
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "module_binding"; node })
 end
 
 module Toplevel_phrase = struct
@@ -4511,6 +4856,11 @@ module Toplevel_phrase = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "toplevel_phrase"; node })
 end
 
 module Directive_argument = struct
@@ -4597,5 +4947,10 @@ module Directive_argument = struct
       | _ -> None
       end
     | _ -> None
+
+  let to_concrete node =
+    match to_concrete_opt node with
+    | Some concrete -> concrete
+    | None -> raise (Cannot_interpret_ast { version; node_name = "directive_argument"; node })
 end
 (*$*)

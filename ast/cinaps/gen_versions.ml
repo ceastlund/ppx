@@ -78,6 +78,12 @@ module Signature = struct
             (inst_node "concrete" ~tvars)
             (inst_node "t" ~tvars)));
     Ml.declare_val
+      "to_concrete"
+      (Line
+         (Printf.sprintf "%s -> %s"
+            (inst_node "t" ~tvars)
+            (inst_node "concrete" ~tvars)));
+    Ml.declare_val
       "to_concrete_opt"
       (Line
          (Printf.sprintf "%s -> %s option"
@@ -318,6 +324,15 @@ module Structure = struct
           Print.println "end");
         Print.println "| _ -> None")
 
+  let define_to_concrete ~node_name =
+    Print.println "let to_concrete node =";
+    Print.indented (fun () ->
+      Print.println "match to_concrete_opt node with";
+      Print.println "| Some concrete -> concrete";
+      Print.println
+        "| None -> raise (Cannot_interpret_ast { version; node_name = %S; node })"
+        node_name)
+
   let print decl ~node_name ~tvars ~grammar =
       Ml.declare_type "t" ~tvars (Line (Ml.poly_type node_name ~tvars));
       Print.newline ();
@@ -327,7 +342,9 @@ module Structure = struct
       Print.newline ();
       define_of_concrete decl;
       Print.newline ();
-      define_to_concrete_opt decl ~node_name ~grammar
+      define_to_concrete_opt decl ~node_name ~grammar;
+      Print.newline ();
+      define_to_concrete ~node_name
 end
 
 module Unversioned = struct
