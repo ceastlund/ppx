@@ -329,9 +329,13 @@ module Structure = struct
     Print.indented (fun () ->
       Print.println "match to_concrete_opt node with";
       Print.println "| Some concrete -> concrete";
-      Print.println
-        "| None -> raise (Cannot_interpret_ast { version; node_name = %S; node })"
-        node_name)
+      Print.println "| None ->";
+      Print.indented (fun () ->
+        Print.println "raise";
+        Print.indented (fun () ->
+          Print.println
+            "(Unversioned.Private.Cannot_interpret_ast { version; node_name = %S; node })"
+            node_name)))
 
   let print decl ~node_name ~tvars ~grammar =
       Ml.declare_type "t" ~tvars (Line (Ml.poly_type node_name ~tvars));
