@@ -333,9 +333,12 @@ module Structure = struct
       Print.indented (fun () ->
         Print.println "raise";
         Print.indented (fun () ->
-          Print.println
-            "(Unversioned.Private.Cannot_interpret_ast { version; node_name = %S; node })"
-            node_name)))
+          Print.println "(Unversioned.Private.Cannot_interpret_ast {";
+          Print.indented (fun () ->
+            Print.println "version;";
+            Print.println "node_name = %S;" node_name;
+            Print.println "node = Unversioned.Private.transparent node;");
+          Print.println "})")))
 
   let print decl ~node_name ~tvars ~grammar =
       Ml.declare_type "t" ~tvars (Line (Ml.poly_type node_name ~tvars));

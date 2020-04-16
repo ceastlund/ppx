@@ -77,7 +77,11 @@ module Longident = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "longident"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "longident";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Longident_loc = struct
@@ -101,7 +105,11 @@ module Longident_loc = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "longident_loc"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "longident_loc";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Rec_flag = struct
@@ -137,7 +145,11 @@ module Rec_flag = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "rec_flag"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "rec_flag";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Direction_flag = struct
@@ -173,7 +185,11 @@ module Direction_flag = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "direction_flag"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "direction_flag";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Private_flag = struct
@@ -209,7 +225,11 @@ module Private_flag = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "private_flag"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "private_flag";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Mutable_flag = struct
@@ -245,7 +265,11 @@ module Mutable_flag = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "mutable_flag"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "mutable_flag";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Virtual_flag = struct
@@ -281,7 +305,11 @@ module Virtual_flag = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "virtual_flag"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "virtual_flag";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Override_flag = struct
@@ -317,7 +345,11 @@ module Override_flag = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "override_flag"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "override_flag";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Closed_flag = struct
@@ -353,7 +385,11 @@ module Closed_flag = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "closed_flag"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "closed_flag";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Arg_label = struct
@@ -414,7 +450,11 @@ module Arg_label = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "arg_label"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "arg_label";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Variance = struct
@@ -455,7 +495,11 @@ module Variance = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "variance"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "variance";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Constant = struct
@@ -547,7 +591,11 @@ module Constant = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "constant"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "constant";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Attribute = struct
@@ -571,7 +619,11 @@ module Attribute = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "attribute"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "attribute";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Extension = struct
@@ -595,7 +647,11 @@ module Extension = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "extension"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "extension";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Attributes = struct
@@ -619,7 +675,11 @@ module Attributes = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "attributes"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "attributes";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Payload = struct
@@ -707,7 +767,11 @@ module Payload = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "payload"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "payload";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Core_type = struct
@@ -748,7 +812,11 @@ module Core_type = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "core_type"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "core_type";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Core_type_desc = struct
@@ -962,7 +1030,11 @@ module Core_type_desc = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "core_type_desc"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "core_type_desc";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Package_type = struct
@@ -986,7 +1058,11 @@ module Package_type = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "package_type"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "package_type";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Row_field = struct
@@ -1048,7 +1124,11 @@ module Row_field = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "row_field"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "row_field";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Object_field = struct
@@ -1108,7 +1188,11 @@ module Object_field = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "object_field"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "object_field";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Pattern = struct
@@ -1149,7 +1233,11 @@ module Pattern = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "pattern"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "pattern";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Pattern_desc = struct
@@ -1451,7 +1539,11 @@ module Pattern_desc = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "pattern_desc"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "pattern_desc";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Expression = struct
@@ -1492,7 +1584,11 @@ module Expression = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "expression"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "expression";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Expression_desc = struct
@@ -2116,7 +2212,11 @@ module Expression_desc = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "expression_desc"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "expression_desc";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Case = struct
@@ -2157,7 +2257,11 @@ module Case = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "case"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "case";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Value_description = struct
@@ -2204,7 +2308,11 @@ module Value_description = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "value_description"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "value_description";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Type_declaration = struct
@@ -2260,7 +2368,11 @@ module Type_declaration = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "type_declaration"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "type_declaration";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Type_kind = struct
@@ -2326,7 +2438,11 @@ module Type_kind = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "type_kind"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "type_kind";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Label_declaration = struct
@@ -2373,7 +2489,11 @@ module Label_declaration = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "label_declaration"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "label_declaration";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Constructor_declaration = struct
@@ -2420,7 +2540,11 @@ module Constructor_declaration = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "constructor_declaration"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "constructor_declaration";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Constructor_arguments = struct
@@ -2476,7 +2600,11 @@ module Constructor_arguments = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "constructor_arguments"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "constructor_arguments";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Type_extension = struct
@@ -2523,7 +2651,11 @@ module Type_extension = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "type_extension"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "type_extension";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Extension_constructor = struct
@@ -2567,7 +2699,11 @@ module Extension_constructor = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "extension_constructor"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "extension_constructor";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Extension_constructor_kind = struct
@@ -2625,7 +2761,11 @@ module Extension_constructor_kind = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "extension_constructor_kind"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "extension_constructor_kind";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_type = struct
@@ -2666,7 +2806,11 @@ module Class_type = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_type"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_type";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_type_desc = struct
@@ -2777,7 +2921,11 @@ module Class_type_desc = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_type_desc"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_type_desc";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_signature = struct
@@ -2815,7 +2963,11 @@ module Class_signature = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_signature"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_signature";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_type_field = struct
@@ -2856,7 +3008,11 @@ module Class_type_field = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_type_field"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_type_field";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_type_field_desc = struct
@@ -2972,7 +3128,11 @@ module Class_type_field_desc = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_type_field_desc"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_type_field_desc";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_infos = struct
@@ -3022,7 +3182,11 @@ module Class_infos = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_infos"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_infos";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_description = struct
@@ -3046,7 +3210,11 @@ module Class_description = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_description"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_description";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_type_declaration = struct
@@ -3070,7 +3238,11 @@ module Class_type_declaration = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_type_declaration"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_type_declaration";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_expr = struct
@@ -3111,7 +3283,11 @@ module Class_expr = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_expr"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_expr";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_expr_desc = struct
@@ -3277,7 +3453,11 @@ module Class_expr_desc = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_expr_desc"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_expr_desc";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_structure = struct
@@ -3315,7 +3495,11 @@ module Class_structure = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_structure"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_structure";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_field = struct
@@ -3356,7 +3540,11 @@ module Class_field = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_field"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_field";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_field_desc = struct
@@ -3491,7 +3679,11 @@ module Class_field_desc = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_field_desc"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_field_desc";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_field_kind = struct
@@ -3549,7 +3741,11 @@ module Class_field_kind = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_field_kind"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_field_kind";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Class_declaration = struct
@@ -3573,7 +3769,11 @@ module Class_declaration = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "class_declaration"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "class_declaration";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Module_type = struct
@@ -3614,7 +3814,11 @@ module Module_type = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "module_type"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "module_type";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Module_type_desc = struct
@@ -3751,7 +3955,11 @@ module Module_type_desc = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "module_type_desc"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "module_type_desc";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Signature = struct
@@ -3775,7 +3983,11 @@ module Signature = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "signature"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "signature";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Signature_item = struct
@@ -3813,7 +4025,11 @@ module Signature_item = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "signature_item"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "signature_item";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Signature_item_desc = struct
@@ -4038,7 +4254,11 @@ module Signature_item_desc = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "signature_item_desc"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "signature_item_desc";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Module_declaration = struct
@@ -4082,7 +4302,11 @@ module Module_declaration = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "module_declaration"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "module_declaration";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Module_type_declaration = struct
@@ -4126,7 +4350,11 @@ module Module_type_declaration = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "module_type_declaration"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "module_type_declaration";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Open_description = struct
@@ -4170,7 +4398,11 @@ module Open_description = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "open_description"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "open_description";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Include_infos = struct
@@ -4211,7 +4443,11 @@ module Include_infos = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "include_infos"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "include_infos";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Include_description = struct
@@ -4235,7 +4471,11 @@ module Include_description = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "include_description"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "include_description";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Include_declaration = struct
@@ -4259,7 +4499,11 @@ module Include_declaration = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "include_declaration"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "include_declaration";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module With_constraint = struct
@@ -4353,7 +4597,11 @@ module With_constraint = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "with_constraint"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "with_constraint";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Module_expr = struct
@@ -4394,7 +4642,11 @@ module Module_expr = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "module_expr"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "module_expr";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Module_expr_desc = struct
@@ -4533,7 +4785,11 @@ module Module_expr_desc = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "module_expr_desc"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "module_expr_desc";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Structure = struct
@@ -4557,7 +4813,11 @@ module Structure = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "structure"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "structure";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Structure_item = struct
@@ -4595,7 +4855,11 @@ module Structure_item = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "structure_item"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "structure_item";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Structure_item_desc = struct
@@ -4854,7 +5118,11 @@ module Structure_item_desc = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "structure_item_desc"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "structure_item_desc";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Value_binding = struct
@@ -4898,7 +5166,11 @@ module Value_binding = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "value_binding"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "value_binding";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Module_binding = struct
@@ -4942,7 +5214,11 @@ module Module_binding = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "module_binding"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "module_binding";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Toplevel_phrase = struct
@@ -5000,7 +5276,11 @@ module Toplevel_phrase = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "toplevel_phrase"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "toplevel_phrase";
+          node = Unversioned.Private.transparent node;
+        })
 end
 
 module Directive_argument = struct
@@ -5093,6 +5373,10 @@ module Directive_argument = struct
     | Some concrete -> concrete
     | None ->
       raise
-        (Unversioned.Private.Cannot_interpret_ast { version; node_name = "directive_argument"; node })
+        (Unversioned.Private.Cannot_interpret_ast {
+          version;
+          node_name = "directive_argument";
+          node = Unversioned.Private.transparent node;
+        })
 end
 (*$*)
