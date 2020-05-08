@@ -1,30 +1,28 @@
 open Import
 
-module L = Ocaml_common.Location
-
-type t = location =
-  { loc_start : Lexing.position
-  ; loc_end   : Lexing.position
+type t = Astlib.Location.t =
+  { loc_start : Astlib.Position.t
+  ; loc_end   : Astlib.Position.t
   ; loc_ghost : bool
   }
 
 let in_file name =
-  let loc =
+  let pos : Astlib.Position.t =
     { pos_fname = name
     ; pos_lnum  = 1
     ; pos_bol   = 0
     ; pos_cnum  = -1
     }
   in
-  { loc_start = loc
-  ; loc_end   = loc
+  { loc_start = pos
+  ; loc_end   = pos
   ; loc_ghost = true
   }
 
 let none = in_file "_none_"
 
-let raise_errorf ?loc fmt = L.raise_errorf ?loc fmt
-let report_exception = L.report_exception
+let raise_errorf ?loc fmt = Astlib.Location.raise_errorf ?loc fmt
+let report_exception = Astlib.Location.report_exception
 
 let of_lexbuf (lexbuf : Lexing.lexbuf) =
   { loc_start = lexbuf.lex_start_p
@@ -39,20 +37,20 @@ let print ppf t =
     (t.loc_start.pos_cnum - t.loc_start.pos_bol)
     (t.loc_end.pos_cnum   - t.loc_start.pos_bol)
 
-type nonrec 'a loc = 'a loc =
+type 'a loc = 'a Astlib.Loc.t =
   { txt : 'a
   ; loc : t
   }
 
 module Error = struct
-  type t = L.error
+  type t = Astlib.Location.error
 
-  let createf ~loc fmt = L.errorf ~loc fmt
+  let createf ~loc fmt = Astlib.Location.errorf ~loc fmt
 
   let message (t : t) = t.msg
   let set_message (t : t) msg = { t with msg }
 
-  let register_error_of_exn = L.register_error_of_exn
+  let register_error_of_exn = Astlib.Location.register_error_of_exn
 
   let of_exn = Compiler_specifics.error_of_exn
 

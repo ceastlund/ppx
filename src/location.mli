@@ -5,9 +5,9 @@
 
 open! Import
 
-type t = location =
-  { loc_start : Lexing.position
-  ; loc_end   : Lexing.position
+type t = Astlib.Location.t =
+  { loc_start : Astlib.Position.t
+  ; loc_end   : Astlib.Position.t
   ; loc_ghost : bool
   }
 
@@ -30,7 +30,7 @@ val report_exception : Format.formatter -> exn -> unit
 (** Prints [File "...", line ..., characters ...-...:] *)
 val print : Format.formatter -> t -> unit
 
-type nonrec 'a loc = 'a loc =
+type 'a loc = 'a Astlib.Loc.t =
   { txt : 'a
   ; loc : t
   }
